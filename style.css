@@ -163,17 +163,20 @@ p{
     margin-bottom: 5px;
 }
 #weater.sun{
-    background-image: url(sun.png);
+    background-image: url(images/sun.png);
 }
 #weater.cloud{
-    background-image: url(cloud.png);
+    background-image: url(images/cloud.png);
 }
 #weater.rain{
-    background-image: url(rain.png);
+    background-image: url(images/rain.png);
 }
 #weater.snow{
-    background-image: url(snow.png);
+    background-image: url(images/snow.png);
 }
 #weater.rainSnow{
-    background-image: url(snow_rain.png);
+    background-image: url(images/snow_rain.png);
+}
+#weater.unknow{
+	background-color: floralwhite;
 }

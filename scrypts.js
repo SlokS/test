@@ -205,6 +205,8 @@ function showMonth(month) {
 		case 11:
 		return "Декабря";
 		break;
+		default:
+        return "Unknown";
 	}
 }
 
@@ -232,6 +234,8 @@ function dayOfTheWeek(dayWeek){
 		case 6: 
 		return "Суббота";
 		break;
+		default:
+        return "Unknown";
 	}
 }
 
@@ -266,6 +270,8 @@ function imageWeather(cloudiness){
 		case 'Дождь со снегом':
 			return 'rainSnow';
 			break;
+		default:
+        return 'unknow';
 	}
 }
 
