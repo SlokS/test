@@ -1,0 +1,179 @@
+html,body{
+    margin: 0 auto;
+    padding: 0;
+/*  max-width: 1920px;*/
+    overflow-x: hidden;
+    min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.2;
+}
+form *{
+    outline: none;
+}
+button{
+    border-style: none;
+
+}
+* ::after{
+    background-repeat: no-repeat;
+}
+* ::before{
+    background-repeat: no-repeat;
+}
+input {
+    border-style: none;
+    border:none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+u{
+    text-decoration: none;
+}
+*{
+    max-height: 999999px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    /*-webkit-text-size-adjust: 100%;*/
+}
+ul li{
+    list-style: none;
+}
+ul{
+    margin:0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    margin:0 ;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.button{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.content{
+    width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.wrapper{
+    background-position: center;
+    position: relative;
+    width: 100vw;
+    height: 700px;
+    background-color: aliceblue;
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+#metcast .content{
+    padding-top: 120px;
+}
+#metcast h1{
+    text-align: center;
+    font-family: arial;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+#metcast .box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#metcast .box .block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    height: 240px;
+    background-color: floralwhite;
+    border: 1px solid black;
+}
+#metcast .box .block .when{
+    font-family: arial;
+    font-size: 12px;
+    margin-top: 10px;
+}
+#metcast .box .block .date{
+    display: flex;
+    margin-top: 5px;
+}
+#metcast .box .block .number,
+#metcast .box .block .month{
+    font-family: Arial;
+    font-size: 20px;
+}
+#metcast .box .block .number{
+    margin-right: 15px;
+}
+#metcast .box .block .day{
+    font-size: 25px;
+    font-family: Arial;
+}
+#metcast .box .block .night{
+    font-size: 11px;
+    font-family: Arial;
+    color: gray;
+    margin-top: 5px;
+}
+#metcast .box .block .rain_and_snow{
+    margin-top: 15px;
+    font-size: 11px;
+    font-family: Arial;
+}
+#metcast .arrow_left{
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+#metcast .arrow_left.unactive{
+    color: grey;
+    cursor: unset;
+}
+#metcast .arrow_right{
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+#metcast .arrow_right.unactive{
+    color: grey;
+    cursor: unset;
+}
+#weater{
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#weater.sun{
+    background-image: url(sun.png);
+}
+#weater.cloud{
+    background-image: url(cloud.png);
+}
+#weater.rain{
+    background-image: url(rain.png);
+}
+#weater.snow{
+    background-image: url(snow.png);
+}
+#weater.rainSnow{
+    background-image: url(snow_rain.png);
+}
