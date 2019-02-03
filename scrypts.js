@@ -166,59 +166,39 @@ var number = [
 		rain: false
 	}];
 
-// Название месяца
-function showMonth(month) {
-	switch (month) {
-		case 0:
-			return "Января";
-		case 1:
-			return "Февраля";
-		case 2:
-			return "Марта";
-		case 3:
-			return "Апреля";
-		case 4:
-			return "Мая";
-		case 5:
-			return "Июня";
-		case 6:
-			return "Июля";
-		case 7:
-			return "Августа";
-		case 8:
-			return "Сентября";
-		case 9:
-			return "Октября";
-		case 10:
-			return "Ноября";
-		case 11:
-			return "Декабря";
-		default:
-			return "Unknown";
-	}
-}
+//Название месяца
+const showMonth = (monthIndex)=>{
+ const months = [
+  "Января",
+  "Февраля",
+  "Марта",
+  "Апреля",
+  "Мая",
+  "Июня",
+  "Июля",
+  "Августа",
+  "Сентября",
+  "Октября",
+  "Ноября",
+  "Декабря"
+ ];
+ return months[monthIndex] ? months[monthIndex] : "Unknown"
+};
+
 
 // Назавние дня
-function dayOfTheWeek(dayWeek) {
-	switch (dayWeek) {
-		case 0:
-			return "Воскресенье";
-		case 1:
-			return "Понедельник";
-		case 2:
-			return "Вторник";
-		case 3:
-			return "Среда";
-		case 4:
-			return "Четверг";
-		case 5:
-			return "Пятница";
-		case 6:
-			return "Суббота";
-		default:
-			return "Unknown";
-	}
-}
+const dayOfTheWeek = (dayIndex)=>{
+	const dayWeek = [
+		"Воскресенье",
+		"Понедельник",
+		"Вторник",
+		"Среда",
+		"Четверг",
+		"Пятница",
+		"Суббота"
+	];
+	return dayWeek[dayIndex] ? dayWeek[dayIndex] : "Unknown"
+};
 
 // Осадки
 function snowAndRain(snow, rain) {
@@ -234,22 +214,17 @@ function snowAndRain(snow, rain) {
 }
 
 // Возвращает название класса, для картинки с погодой
-function imageWeather(cloudiness) {
-	switch (cloudiness) {
-		case "Ясно":
-			return 'sun';
-		case "Облачно":
-			return 'cloud';
-		case "Дождь":
-			return 'rain';
-		case "Снег":
-			return 'snow';
-		case 'Дождь со снегом':
-			return 'rainSnow';
-		default:
-			return 'unknow';
+const imageWeather = (cloudName)=>{
+	const cloudiness ={
+	 	"Ясно": "sun",
+  		"Облачно": "cloud",
+  		"Дождь": "rain",
+  		"Снег": "snow",
+  		"Дождь со снегом": "rainSnow"
 	}
+	return cloudiness[cloudName] ? cloudiness[cloudName] : "Unknown"
 }
+
 
 var timeNow = new Date;  //  Время в данный момент
 var dayLength = 86400000;
@@ -276,7 +251,7 @@ function main(numberDay) {    // Главная функция, записыва
 	for (var n = 0; n < 4; n++) {    // Цикл для заполнения четерех ячеек с погодой
 		var time = new Date(number[numberDay].date); //узнаем дату этого дня
 		var month = time.getUTCMonth();   //получаем месяц (номер);
-		showMonth(month);  //определяем название месяца
+		// showMonth(month);  //определяем название месяца
 		var dataAttr = document.querySelector('[data-number="' + n + '"]');
 		dataAttr.querySelector('.month').innerHTML = showMonth(month);  // Название месяца
 		dataAttr.querySelector('.number').innerHTML = time.getUTCDate(); // Номер дня
