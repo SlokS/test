@@ -1,5 +1,5 @@
 
-var number = [
+const number = [
 	//30
 	{
 		date: 1548806400000,
@@ -167,27 +167,27 @@ var number = [
 	}];
 
 //Название месяца
-const showMonth = (monthIndex)=>{
- const months = [
-  "Января",
-  "Февраля",
-  "Марта",
-  "Апреля",
-  "Мая",
-  "Июня",
-  "Июля",
-  "Августа",
-  "Сентября",
-  "Октября",
-  "Ноября",
-  "Декабря"
- ];
- return months[monthIndex] ? months[monthIndex] : "Unknown"
+const showMonth = (monthIndex) => {
+	const months = [
+		"Января",
+		"Февраля",
+		"Марта",
+		"Апреля",
+		"Мая",
+		"Июня",
+		"Июля",
+		"Августа",
+		"Сентября",
+		"Октября",
+		"Ноября",
+		"Декабря"
+	];
+	return months[monthIndex] || "Unknown"
 };
 
 
 // Назавние дня
-const dayOfTheWeek = (dayIndex)=>{
+const dayOfTheWeek = (dayIndex) => {
 	const dayWeek = [
 		"Воскресенье",
 		"Понедельник",
@@ -197,11 +197,11 @@ const dayOfTheWeek = (dayIndex)=>{
 		"Пятница",
 		"Суббота"
 	];
-	return dayWeek[dayIndex] ? dayWeek[dayIndex] : "Unknown"
+	return dayWeek[dayIndex] || "Unknown"
 };
 
 // Осадки
-function snowAndRain(snow, rain) {
+const snowAndRain = (snow, rain) => {
 	if (snow && rain) {
 		return "дождь со снегом";
 	} else if (snow) {
@@ -214,30 +214,30 @@ function snowAndRain(snow, rain) {
 }
 
 // Возвращает название класса, для картинки с погодой
-const imageWeather = (cloudName)=>{
-	const cloudiness ={
-	 	"Ясно": "sun",
-  		"Облачно": "cloud",
-  		"Дождь": "rain",
-  		"Снег": "snow",
-  		"Дождь со снегом": "rainSnow"
+const imageWeather = (cloudName) => {
+	const cloudiness = {
+		"Ясно": "sun",
+		"Облачно": "cloud",
+		"Дождь": "rain",
+		"Снег": "snow",
+		"Дождь со снегом": "rainSnow"
 	}
-	return cloudiness[cloudName] ? cloudiness[cloudName] : "Unknown"
+	return cloudiness[cloudName] || "Unknown"
 }
 
 
-var timeNow = new Date;  //  Время в данный момент
-var dayLength = 86400000;
-var numberDay = 0;
-for (var i = 0; i < number.length; i++) {     // Какая дата во входных данных соответствует текущей
-	var difference = timeNow - number[i].date;   // Вычисление разницы во времени
+const timeNow = new Date;  //  Время в данный момент
+const dayLength = 86400000;
+let numberDay = 0;
+for (let i = 0; i < number.length; i++) {     // Какая дата во входных данных соответствует текущей
+	let difference = timeNow - number[i].date;   // Вычисление разницы во времени
 	if ((difference < dayLength) && (difference >= 0)) {    // Если разница меньше 24 часов, то берем этот номер массива
 		numberDay = i;
 	}
 }
 // Проверка исключений
-var leftArrow = document.querySelector('.arrow_left');
-var rightArrow = document.querySelector('.arrow_right');
+const leftArrow = document.querySelector('.arrow_left');
+const rightArrow = document.querySelector('.arrow_right');
 
 
 if ((timeNow - number[number.length - 4].date) > dayLength) {
@@ -247,28 +247,28 @@ if ((timeNow - number[number.length - 4].date) > dayLength) {
 	numberDay = 0;
 	leftArrow.classList.add("unactive")
 }
-function main(numberDay) {    // Главная функция, записывающая информации, в блоки с погодой
-	for (var n = 0; n < 4; n++) {    // Цикл для заполнения четерех ячеек с погодой
-		var time = new Date(number[numberDay].date); //узнаем дату этого дня
-		var month = time.getUTCMonth();   //получаем месяц (номер);
+const main = (numberDay) => {    // Главная функция, записывающая информации, в блоки с погодой
+	for (let n = 0; n < 4; n++) {    // Цикл для заполнения четерех ячеек с погодой
+		const time = new Date(number[numberDay].date); //узнаем дату этого дня
+		const month = time.getUTCMonth();   //получаем месяц (номер);
 		// showMonth(month);  //определяем название месяца
-		var dataAttr = document.querySelector('[data-number="' + n + '"]');
+		let dataAttr = document.querySelector(`[data-number="${n}"]`);
 		dataAttr.querySelector('.month').innerHTML = showMonth(month);  // Название месяца
 		dataAttr.querySelector('.number').innerHTML = time.getUTCDate(); // Номер дня
 		dataAttr.querySelector('.when').innerHTML = dayOfTheWeek(time.getUTCDay()); // Название дня недели
-		dataAttr.querySelector('.day span').innerHTML = '  ' + number[numberDay].temperature.day + '\u00B0'; // Температура днем
-		dataAttr.querySelector('.night span').innerHTML = '  ' + number[numberDay].temperature.night + '\u00B0'; // Температура ночью
+		dataAttr.querySelector('.day span').innerHTML = ` ${number[numberDay].temperature.day} \u00B0`; // Температура днем
+		dataAttr.querySelector('.night span').innerHTML = ` ${number[numberDay].temperature.night} \u00B0`; // Температура ночью
 		if ((timeNow.getUTCDate() === time.getUTCDate()) && (timeNow.getUTCMonth() == time.getUTCMonth())) {
 			dataAttr.querySelector('.when').innerHTML = 'Сегодня';  // Определяем для какого дня нужно писать "сегодня"
 		}
 		dataAttr.querySelector('.rain_and_snow').innerHTML = snowAndRain(number[numberDay].snow, number[numberDay].rain);
-		dataAttr.querySelector('#weater').className = ''; 
+		dataAttr.querySelector('#weater').className = '';
 		dataAttr.querySelector('#weater').classList.add(imageWeather(number[numberDay].cloudiness)); // Добавление класса для изображения
 		numberDay = numberDay + 1;
 	}
 }
 // Левая стрелка
-leftArrow.addEventListener("click", function () {
+leftArrow.addEventListener("click", () => {
 	if (numberDay > 0) {
 		numberDay = numberDay - 1;
 		main(numberDay);
@@ -280,7 +280,7 @@ leftArrow.addEventListener("click", function () {
 });
 
 // Правая стрелка
-rightArrow.addEventListener("click", function () {
+rightArrow.addEventListener("click", () => {
 	if (numberDay < number.length - 4) {
 		numberDay = numberDay + 1;
 		main(numberDay);
