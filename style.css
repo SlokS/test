@@ -72,7 +72,7 @@ p{
     background-position: center;
     position: relative;
     width: 100vw;
-    height: 700px;
+    height: 100vh;
     background-color: aliceblue;
 }
 .container{
@@ -95,6 +95,11 @@ p{
     justify-content: space-around;
     align-items: center;
 }
+#metcast .box .weater_box{
+	display: flex;
+	justify-content: space-between;
+	width: 890px;
+}
 #metcast .box .block{
     display: flex;
     flex-direction: column;
@@ -104,6 +109,8 @@ p{
     height: 240px;
     background-color: floralwhite;
     border: 1px solid black;
+    transition: 0.35s;
+    border-radius: 14px;
 }
 #metcast .box .block .when{
     font-family: arial;
@@ -137,20 +144,17 @@ p{
     font-size: 11px;
     font-family: Arial;
 }
-#metcast .arrow_left{
-    font-size: 40px;
-    color: black;
-    cursor: pointer;
-}
-#metcast .arrow_left.unactive{
-    color: grey;
-    cursor: unset;
-}
+#metcast .arrow_left,
 #metcast .arrow_right{
     font-size: 40px;
     color: black;
     cursor: pointer;
+    width: 60px;
+    transition: 0.35s;
+    display: flex;
+    justify-content: center;
 }
+#metcast .arrow_left.unactive,
 #metcast .arrow_right.unactive{
     color: grey;
     cursor: unset;
@@ -179,4 +183,90 @@ p{
 }
 #weater.unknow{
 	background-color: floralwhite;
+}
+
+@media (min-width: 1025px){
+	#metcast .box .block:hover{
+		-webkit-transform: scale(1.1);
+  		-ms-transform: scale(1.1);
+  		transform: scale(1.1);
+  		box-shadow: 0px 20px 40px 0px rgba(0, 29, 177, 0.31);
+	}
+	#metcast .arrow_left:hover,
+	#metcast .arrow_right:hover{
+		transform: scale(1.5);
+	}
+
+}
+@media (max-width: 1120px) and (min-width: 490px){
+	.wrapper{
+		height: auto;
+		padding-bottom: 100px;
+	}
+	.content{
+		width: 420px;
+	}
+	#metcast .box{
+		flex-direction: column;
+	}
+	#metcast .arrow_left, #metcast .arrow_right{
+		transform: rotate(90deg);
+	}
+	#metcast .box .block{
+		width: 211px;
+    	height: 211px;
+    	margin: 7px 0px;
+	}
+	#metcast .box .weater_box{
+		flex-wrap: wrap;
+		width: 430px;
+	}
+}
+@media (max-width: 489px){
+	.wrapper{
+		height: auto;
+		padding-bottom: 100px;
+	}
+	.content{
+		width: 320px;
+	}
+	#metcast .content{
+		padding-top: 30px;
+	}
+	#metcast .box{
+		flex-direction: column;
+	}
+	#metcast .arrow_left, #metcast .arrow_right{
+		transform: rotate(90deg);
+	}
+	#metcast .box .block .when{
+		font-size: 11px;
+    	margin-top: 6px;
+	}
+	#metcast .box .block .date{
+		margin-top: 4px;
+	}
+	#metcast .box .block .number, #metcast .box .block .month{
+		font-size: 14px;
+	}
+	#weater{
+		width: 30px;
+		height: 30px;
+	}
+	#metcast .box .block .day{
+		font-size: 17px;
+	}
+	#metcast .box .block .rain_and_snow{
+		margin-top: 8px;
+	}
+	#metcast .box .block{
+		width: 159px;
+    	height: 150px;
+    	margin: 5px 0px;
+	}
+	#metcast .box .weater_box{
+		flex-direction: column;
+		align-items: center;
+	}
+
 }

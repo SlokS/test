@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Тестовое задание</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -12,52 +13,54 @@
 			<div class="content">
 				<h1>Прогноз погоды</h1>
 				<div class="box">
-					<div class="arrow_left" onclick="toLeft()"><i class="fas fa-angle-left"></i></div>
-					<div class="block first" data-number="0">
-						<div class="when"></div>
-						<div class="date"> 
-							<div class="number"></div>
-							<div class="month"></div>
+					<div class="arrow_left" ><i class="fas fa-angle-left"></i></div>
+					<div class="weater_box">
+						<div class="block first" data-number="0">
+							<div class="when"></div>
+							<div class="date"> 
+								<div class="number"></div>
+								<div class="month"></div>
+							</div>
+							<div id="weater"></div>
+							<div class="day">Днем<span></span></div>
+							<div class="night">Ночью<span></span></div>
+							<div class="rain_and_snow"></div>
 						</div>
-						<div id="weater"></div>
-						<div class="day">Днем<span></span></div>
-						<div class="night">Ночью<span></span></div>
-						<div class="rain_and_snow"></div>
-					</div>
-					<div class="block second" data-number="1">
-						<div class="when"></div>
-						<div class="date"> 
-							<div class="number"></div>
-							<div class="month"></div>
+						<div class="block second" data-number="1">
+							<div class="when"></div>
+							<div class="date"> 
+								<div class="number"></div>
+								<div class="month"></div>
+							</div>
+							<div id="weater"></div>
+							<div class="day">Днем<span></span></div>
+							<div class="night">Ночью<span></span></div>
+							<div class="rain_and_snow"></div>
 						</div>
-						<div id="weater"></div>
-						<div class="day">Днем<span></span></div>
-						<div class="night">Ночью<span></span></div>
-						<div class="rain_and_snow"></div>
-					</div>
-					<div class="block third" data-number="2">
-						<div class="when"></div>
-						<div class="date"> 
-							<div class="number"></div>
-							<div class="month"></div>
+						<div class="block third" data-number="2">
+							<div class="when"></div>
+							<div class="date"> 
+								<div class="number"></div>
+								<div class="month"></div>
+							</div>
+							<div id="weater"></div>
+							<div class="day">Днем<span></span></div>
+							<div class="night">Ночью<span></span></div>
+							<div class="rain_and_snow"></div>
 						</div>
-						<div id="weater"></div>
-						<div class="day">Днем<span></span></div>
-						<div class="night">Ночью<span></span></div>
-						<div class="rain_and_snow"></div>
-					</div>
-					<div class="block fourth" data-number="3">
-						<div class="when"></div>
-						<div class="date"> 
-							<div class="number"></div>
-							<div class="month"></div>
+						<div class="block fourth" data-number="3">
+							<div class="when"></div>
+							<div class="date"> 
+								<div class="number"></div>
+								<div class="month"></div>
+							</div>
+							<div id="weater"></div>
+							<div class="day">Днем<span></span></div>
+							<div class="night">Ночью<span></span></div>
+							<div class="rain_and_snow"></div>
 						</div>
-						<div id="weater"></div>
-						<div class="day">Днем<span></span></div>
-						<div class="night">Ночью<span></span></div>
-						<div class="rain_and_snow"></div>
 					</div>
-					<div class="arrow_right" onclick="toRight()"><i class="fas fa-angle-right"></i></div>
+					<div class="arrow_right"><i class="fas fa-angle-right"></i></div>
 				</div>
 			</div>
 		</div>
